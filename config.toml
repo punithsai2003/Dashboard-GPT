@@ -1,0 +1,17 @@
+[theme]
+base = "dark"
+primaryColor = "#A3E635"
+backgroundColor = "#1B2420"
+secondaryBackgroundColor = "#25322B"
+textColor = "#E6EFE0"
+borderColor = "#34453B"
+font = "'IBM Plex Sans':https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap, sans-serif"
+baseRadius = "0.75rem"
+showWidgetBorder = true
+chartCategoricalColors = ["#A3E635", "#34D399", "#22D3EE", "#FACC15", "#4ADE80", "#2DD4BF", "#BEF264", "#FB923C"]
+
+[server]
+maxUploadSize = 50
+
+[client]
+toolbarMode = "minimal"
