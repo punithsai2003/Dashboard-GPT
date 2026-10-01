@@ -1,4 +1,4 @@
-# 📊 Dashboard GPT
+# Dashboard GPT
 
 **An AI assistant that turns a dataset into an accurate dashboard through conversation.**
 
@@ -24,17 +24,6 @@ dashboard you can edit by chat or by hand, then export as PDF, HTML or a Power B
 5. **pandas does all the maths** (group-by, top N, date bucketing), so the numbers are exact.
    Data questions ("which product sold the most?") are answered the same way.
 
-```mermaid
-flowchart LR
-    A[CSV / Excel] --> B[profiler.py<br/>type detection, nulls, stats]
-    B --> C[Data brief]
-    C --> D[llm.py<br/>Gemini: chat → JSON spec]
-    D --> E[spec.py<br/>Pydantic validation]
-    E --> F[charts.py<br/>pandas aggregation + Plotly]
-    F --> G[Dashboard]
-    G --> H[export.py<br/>PDF · HTML · Power BI Excel]
-    G -- "change chart 2 to a line chart" --> D
-```
 
 ## Features
 
@@ -56,32 +45,6 @@ flowchart LR
 
 Python · Streamlit · pandas · Plotly · Google Gemini (`google-genai`) · Pydantic · matplotlib · fpdf2 · openpyxl
 
-## Run locally
-
-```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Add your free Gemini key (from https://aistudio.google.com/apikey) to `.streamlit/secrets.toml`:
-
-```toml
-GEMINI_API_KEY = "your-key-here"
-```
-
-Then start the app:
-
-```bash
-streamlit run app.py
-```
-
-## Deploy on Streamlit Community Cloud
-
-1. Push this folder to a **public** GitHub repo. `.streamlit/secrets.toml` is in `.gitignore`, so your key stays private.
-2. Go to https://share.streamlit.io, sign in with GitHub, click **Create app**, pick the repo and `app.py`.
-3. In **Advanced settings → Secrets**, paste the contents of `secrets.example.toml` with your real key.
-4. Click **Deploy**.
 
 ## Project structure
 
